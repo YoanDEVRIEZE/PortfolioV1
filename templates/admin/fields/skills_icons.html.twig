@@ -1,0 +1,13 @@
+{% if field.value is not empty %}
+    <div class="skills-icons">
+        {% for skill in field.value %}
+            <div class="skill-icon">
+                <img src="{{ asset('/uploads/skills/' ~ skill.logofilename) }}" alt="{{ skill.name }}" title="{{ skill.name }}">
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <span>
+        Aucune compétence
+    </span>
+{% endif %}

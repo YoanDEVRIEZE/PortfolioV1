@@ -1,0 +1,366 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <nav class="l-side-nav" aria-label="Navigation principale">
+        <ul class="side-nav">
+            <li class="is-active" data-section-index="0" role="button" tabindex="0">
+                <span>
+                    {{ 'Accueil'|trans }}
+                </span>
+            </li>
+            <li data-section-index="1" role="button" tabindex="0">
+                <span>
+                    {{ 'Mes projets et réalisations'|trans }}
+                </span>
+            </li>
+            <li data-section-index="2" role="button" tabindex="0">
+                <span>
+                    {{ 'Mon parcours professionnel'|trans }}
+                </span>
+            </li>
+            <li data-section-index="3" role="button" tabindex="0">
+                <span>
+                    {{ 'Mes compétences'|trans }}
+                </span>
+            </li>
+            <li data-section-index="4" role="button" tabindex="0">
+                <span>
+                    {{ 'Me contacter'|trans }}
+                </span>
+            </li>
+        </ul>
+    </nav>
+    <ul class="l-main-content main-content">
+        <li class="l-section section section--is-active">
+            <div class="intro">
+                <div class="intro--banner">
+                    <h1 class="intro--title">
+                        {{ siteParameter.title ? siteParameter.title|sanitize_html : ('Titre'|trans) }}
+                    </h1>
+                    <button class="meContacter" type="button">
+                        {{ 'Me contacter'|trans }}
+                        {% include 'site/_arrow.html.twig' %}
+                        <span class="btn-background"></span>
+                    </button>
+                    <img class="profil-img-accueil" src="{{ user.photofilename ? asset('/uploads/profile/' ~ user.photofilename) : asset('styles/img/profil/default.webp') }}" alt="{{ user.firstname ?? ('Prénom'|trans) }} {{ user.lastname ?? ('Nom'|trans) }}">
+                </div>
+                <div class="intro--options">
+                    {% for aboutItem in about %}
+                        <article>
+                            <p>
+                                <strong>
+                                    <u>
+                                        {{ aboutItem.title }}
+                                    </u>
+                                </strong>
+                                {{ aboutItem.content|sanitize_html }}
+                            </p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </li>
+        <li class="l-section section">
+            <div class="work">
+                {% if project is empty %}
+                    <h2 class="section-empty">
+                        {{ 'Aucun projet ou réalisation trouvé.'|trans }}
+                    </h2>
+                {% else %}
+                    <h2>
+                        {{ 'Mes projets et réalisations'|trans }}
+                    </h2>
+                    <div class="work--lockup">
+                        <ul class="slider">
+                            {% for projectItem in project %}
+                                <li class="slider--item">
+                                    <a href="#project-{{ projectItem.id }}" class="open-popup" title="{{ projectItem.title }}">
+                                        <div class="slider--item-image">
+                                            {% if projectItem.coverpicturefilename %}
+                                                <img src="{{ asset('/uploads/projects/covers/' ~ projectItem.coverpicturefilename) }}" alt="{{ projectItem.title }}">
+                                            {% endif %}
+                                        </div>
+                                        <p class="slider--item-title">
+                                            {{ projectItem.title }}
+                                        </p>
+                                        <p class="slider--item-description">
+                                            {{ projectItem.description }}
+                                        </p>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <button class="slider--prev" type="button" aria-label="{{ 'Projet précédent'|trans }}">
+                            <span class="arrow-icon--reverse">
+                                {% include 'site/_arrow.html.twig' %}
+                            </span>
+                        </button>
+                        <button class="slider--next" type="button" aria-label="{{ 'Projet suivant'|trans }}">
+                            {% include 'site/_arrow.html.twig' %}
+                        </button>
+                    </div>
+                {% endif %}
+            </div>
+        </li>
+        <li class="l-section section">
+            <div class="about">
+                <div class="about--banner">
+                    <h2>
+                        {{ 'career.heading.line_1'|trans }}<br>
+                        {{ 'career.heading.line_2'|trans }}<br>
+                        {{ 'career.heading.line_3'|trans }}
+                    </h2>
+                    {% if user.cvfilename %}
+                        <a href="{{ asset('/uploads/cv/' ~ user.cvfilename) }}" download title="{{ 'Télécharger le CV de'|trans }} {{ user.firstname }} {{ user.lastname }}">
+                            {{ 'Télécharger mon CV'|trans }}
+                            <span>
+                                {% include 'site/_arrow.html.twig' %}
+                            </span>
+                        </a>
+                    {% endif %}
+                </div>
+                {% if career is empty %}
+                    <h2 class="section-empty">
+                        {{ 'Aucun parcours trouvé.'|trans }}
+                    </h2>
+                {% else %}
+                    <div class="mySwiper" data-career-slider>
+                        <div class="swiper-wrapper">
+                            {% for careerItem in career %}
+                                <div class="swiper-slide">
+                                    <a href="#career-{{ careerItem.id }}" class="open-popup" title="{{ careerItem.title }}">
+                                        {% if careerItem.coverpicturefilename %}
+                                            <img class="career-cover" src="{{ asset('/uploads/careers/covers/' ~ careerItem.coverpicturefilename) }}" alt="">
+                                        {% endif %}
+                                        <h3>
+                                            {{ careerItem.title }}
+                                        </h3>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <button class="swiper-button-prev" type="button" aria-label="{{ 'Parcours précédent'|trans }}"></button>
+                        <button class="swiper-button-next" type="button" aria-label="{{ 'Parcours suivant'|trans }}"></button>
+                    </div>
+                {% endif %}
+            </div>
+        </li>
+        <li class="l-section section">
+            <div class="hire">
+                <h2>
+                    {{ 'Mes compétences'|trans }}
+                </h2>
+                <div class="work-request--options">
+                    {% if skill is empty %}
+                        <h2 class="section-empty">
+                            {{ 'Aucune compétence trouvée.'|trans }}
+                        </h2>
+                    {% else %}
+                        {% for skillItem in skill %}
+                            <div class="progress-container">
+                                <span class="progress-label">
+                                    {{ skillItem.name }}
+                                </span>
+                                {% if skillItem.logofilename %}
+                                    <img class="skill-logo" src="{{ asset('/uploads/skills/' ~ skillItem.logofilename) }}" alt="{{ skillItem.name }}">
+                                {% endif %}
+                                <div class="progress-bar">
+                                    <div class="progress" data-value="{{ skillItem.level }}" data-color="{{ skillItem.color }}">
+                                        0%
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </li>
+        <li class="l-section section">
+            <div class="contact">
+                <div class="contact--lockup">
+                    <div class="modal">
+                        <div class="modal-content">
+                            <div class="modal-left">
+                                <div class="modal--information">
+                                    {% for flashMessage in app.flashes('success') %}
+                                        <div class="alert alert-success" role="status">
+                                            <div class="alert-content">
+                                                <img src="{{ asset('styles/img/icones_contact/icons8-approbation-48.webp') }}" class="alert-icon" alt="">
+                                                <span>
+                                                    {{ flashMessage }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    {% for flashMessage in app.flashes('error') %}
+                                        <div class="alert alert-error" role="alert">
+                                            <div class="alert-content">
+                                                <img src="{{ asset('styles/img/icones_contact/icons8-annuler-48.webp') }}" class="alert-icon" alt="">
+                                                <span>
+                                                    {{ flashMessage }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    {% if user.email %}
+                                        <a href="mailto:{{ user.email }}">
+                                            {{ user.email }}
+                                        </a>
+                                    {% endif %}
+                                    {% if user.phone %}
+                                        <a href="tel:{{ user.phone }}">
+                                            {{ 'Tel'|trans }} : {{ user.phone }}
+                                        </a>
+                                    {% endif %}
+                                </div>
+                                <ul class="modal--options">
+                                    {% if user.linklinkedin %}
+                                        <li>
+                                            <a class="linkedin" href="{{ user.linklinkedin }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ asset('styles/img/icones_contact/icons8-linkedin-48.webp') }}" alt="">
+                                                LinkedIn
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                    {% if user.linkgithub %}
+                                        <li>
+                                            <a class="github" href="{{ user.linkgithub }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ asset('styles/img/icones_contact/icons8-github-48.webp') }}" alt="">
+                                                GitHub
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                    <li>
+                                        <a class="open-popup formulaire" href="#contact-form">
+                                            <img src="{{ asset('styles/img/icones_contact/icons8-courrier-48.webp') }}" alt="">
+                                            {{ 'Par formulaire'|trans }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    {% for projectItem in project %}
+        <div id="project-{{ projectItem.id }}" class="popup" role="dialog" aria-modal="true" aria-labelledby="project-title-{{ projectItem.id }}" hidden>
+            <div class="popup-content" tabindex="-1">
+                <button type="button" class="close" aria-label="{{ 'Fermer la fenêtre'|trans }}">
+                    &times;
+                </button>
+                {% if projectItem.projectpictureFilename %}
+                    <div class="popup-media">
+                        <img src="{{ asset('/uploads/projects/details/' ~ projectItem.projectpictureFilename) }}" alt="{{ 'Image du projet'|trans }} : {{ projectItem.title }}">
+                    </div>
+                {% endif %}
+                <div class="popup-header">
+                    <div class="popup-title-block">
+                        <p class="popup-kicker">
+                            {{ 'Projet'|trans }}
+                        </p>
+                        <h2 id="project-title-{{ projectItem.id }}">
+                            {{ projectItem.title }}
+                        </h2>
+                    </div>
+                    <div class="popup-logos">
+                        {% for projectSkill in projectItem.skills %}
+                            {% if projectSkill.logoFilename %}
+                                <img src="{{ asset('/uploads/skills/' ~ projectSkill.logoFilename) }}" alt="{{ projectSkill.name }}" class="logo">
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if projectItem.description %}
+                    <p class="popup-summary">
+                        {{ projectItem.description }}
+                    </p>
+                {% endif %}
+                {% if projectItem.link %}
+                    <p class="popup-link">
+                        <a href="{{ projectItem.link }}" target="_blank" rel="noopener noreferrer">
+                            {{ 'Découvrir le projet'|trans }}
+                        </a>
+                    </p>
+                {% endif %}
+                <div class="pop-contenu popup-body">
+                    {{ projectItem.content|sanitize_html }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% for careerItem in career %}
+        <div id="career-{{ careerItem.id }}" class="popupparcours" role="dialog" aria-modal="true" aria-labelledby="career-title-{{ careerItem.id }}" hidden>
+            <div class="popup-content" tabindex="-1">
+                <button type="button" class="close" aria-label="{{ 'Fermer la fenêtre'|trans }}">
+                    &times;
+                </button>
+                {% if careerItem.jobpictureFilename %}
+                    <div class="popup-media">
+                        <img src="{{ asset('/uploads/careers/details/' ~ careerItem.jobpictureFilename) }}" alt="{{ 'Entreprise'|trans }} : {{ careerItem.title }}">
+                    </div>
+                {% endif %}
+                <div class="popup-header">
+                    <div class="popup-title-block">
+                        <p class="popup-kicker">
+                            {{ 'Entreprise'|trans }}
+                        </p>
+                        <h2 id="career-title-{{ careerItem.id }}">
+                            {{ careerItem.title }} — {{ careerItem.position }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="popup-meta">
+                    <p>
+                        <strong>
+                            {{ 'Statut'|trans }} :
+                        </strong>
+                        {{ careerItem.status|trans }}
+                    </p>
+                    <p>
+                        <strong>
+                            {{ 'Période'|trans }} :
+                        </strong>
+                        {{ careerItem.startdate|date('m/Y') }} {{ 'au'|trans }} {{ careerItem.enddate ? careerItem.enddate|date('m/Y') : ('maintenant'|trans) }}
+                    </p>
+                </div>
+                <div class="pop-contenu popup-body">
+                    {{ careerItem.content|sanitize_html }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div id="contact-form" class="popupcontact" role="dialog" aria-modal="true" aria-labelledby="contact-form-title" hidden>
+        <div class="popup-content popup-content--contact" tabindex="-1">
+            <button type="button" class="close" aria-label="{{ 'Fermer la fenêtre'|trans }}">
+                &times;
+            </button>
+            <div class="popup-header">
+                <div class="popup-title-block">
+                    <p class="popup-kicker">
+                        {{ 'Me contacter'|trans }}
+                    </p>
+                    <h2 id="contact-form-title">
+                        {{ 'Me contacter par formulaire'|trans }}
+                    </h2>
+                    <p class="popup-summary">
+                        {{ 'contact.guidance'|trans }}
+                    </p>
+                </div>
+            </div>
+            {{ form_start(form, {'attr': {'id': 'contact-form-fields', 'novalidate': 'novalidate'}}) }}
+                {% include 'site/_contact_field.html.twig' with {field: form.lastname, label: 'Nom'} %}
+                {% include 'site/_contact_field.html.twig' with {field: form.firstname, label: 'Prénom'} %}
+                {% include 'site/_contact_field.html.twig' with {field: form.email, label: 'E-mail'} %}
+                {% include 'site/_contact_field.html.twig' with {field: form.message, label: 'Votre message'} %}
+                <button class="formulairebutton" type="submit">
+                    {{ 'Envoyer'|trans }}
+                </button>
+                <p class="contact-privacy">
+                    {{ 'contact.recaptcha_notice'|trans }}
+                </p>
+            {{ form_end(form) }}
+        </div>
+    </div>
+    <div id="section-data" data-section="{{ app.request.query.getInt('section', section) }}" data-open-contact="{{ open_contact ? 'true' : 'false' }}"></div>
+{% endblock %}

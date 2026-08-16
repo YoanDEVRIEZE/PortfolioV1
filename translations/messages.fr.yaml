@@ -1,0 +1,187 @@
+# Traduction FR pour EasyAdminBundle
+
+Bienvenue sur le Tableau de bord : Bienvenue sur le Tableau de bord
+Tableau de bord : Tableau de bord
+Présentation  : Présentation 
+Mes projets : Mes projets
+Parcours : Parcours
+Skills : Skills
+La skill : La skill
+Messages : Messages
+Paramètres du site : Paramètres du site
+Utilisateur : Utilisateur
+L'utilisateur : L'utilisateur
+Voir le site : Voir le site
+Déconnexion : Déconnexion
+Vos messages : Vos messages
+message(s) : message(s)
+Voir : Voir
+Vos projets : Vos projets
+projet(s) : projet(s)
+Aucun projet : Aucun projet
+Où est-ce que j’ai travaillé : Où est-ce que j'ai travaillé
+entreprise(s) : entreprise(s)
+Aucun parcours : Aucun parcours
+En cours : En cours
+Vos skills : vos skills
+Liste des présentations : Liste des présentations
+Titre : Titre
+Contenu de votre présentation : Contenu de votre présentation
+Créer une présentation : Créer une présentation
+Modifier une présentation : Modifier une présentation 
+Entre 1 et 100 caractères maximum. Pour effectuer un retour à ligne, utilisez la balise HTML : Entre 1 et 100 caractères maximum. Pour effectuer un retour à ligne, utilisez la balise HTML
+Description : Description
+Mots-clés : Mots-clés
+Description pour les réseaux : Description pour les réseaux
+URL de votre site : URL de votre site
+Ajouter les paramètres du site : Ajouter les paramètres du site
+Modifier les paramètres du site : Modifier les paramètres du site
+Détails des paramètres du site : Détails des paramètres du site
+SiteParameter : SiteParameter
+About : About
+Portfolio : Portfolio
+Titre du site : Titre du site
+Prénom : Prénom
+Nom : Nom
+Modifier un utilisateur : Modifier un utilisateur
+user.updated: "L'utilisateur \"{{ email }}\" a été modifié avec succès."
+E-mail : E-mail
+Téléphone : Téléphone
+Photo de profil : Photo de profil
+Mot de passe : Mot de passe
+Confirmer le mot de passe : Confirmer le mot de passe
+Les mots de passe doivent correspondre : Les mots de passe doivent correspondre
+Lien GitHub : Lien GitHub
+Lien Linkedin : Lien Linkedin 
+Votre CV : Votre CV
+Entre X et X caractères maximum : 'Entre first et last caractères maximum'
+Image au format .webp : Image au format .webp 
+Entre 6 et 25 caractères maximum, au moins une majuscule, une minuscule et un chiffre : Entre 6 et 25 caractères maximum, au moins une majuscule, une minuscule et un chiffre
+Veuillez comfirmer votre mot de passe : Veuillez comfirmer votre mot de passe
+Fichier au format .pdf, avec une taille maximale de 10Mo : Fichier au format .pdf, avec une taille maximale de 10Mo
+Télécharger le CV : Télécharger le CV
+User : User
+Aucun fichier : Aucun fichier
+confirmation.added : 'title content a été ajouté(e) avec succès.'
+confirmation.updated : 'title content a été modifié(e) avec succès.'
+confirmation.deleted : 'title content a été supprimé(e) avec succès.'
+Logo : Logo
+Niveau : Niveau
+Couleur associée : Couleur associée
+Ajouter un skill : Ajouter un skill
+Modifier un skill : Modifier un skill 
+Liste des skills : Liste des skills
+Skill : Skill
+Entre 0 et 100 : Entre 0 et 100 
+Selectionnez une couleur correspondante au skill : Selectionnez une couleur correspondante au skill
+Ajouter un parcours : Ajouter un parcours
+Modifier un parcours : Modifier un parcours 
+Liste des parcours : Liste des parcours
+Nom de l'entreprise : Nom de l'entreprise
+Poste occupé : Poste occupé
+Date de début : Date de début
+Statut : Statut
+Date de fin : Date de fin
+Photo de couverture : Photo de couverture
+Photo parcours : Photo parcours
+Contenu du parcours : Contenu du parcours
+Sélectionnez un statut pour ce parcours : Sélectionnez un statut pour ce parcours
+'Format : JJ/MM/AAAA, laissez vide si en cours ou en cours de réflexion' : 'Format : JJ/MM/AAAA, laissez vide si en cours ou en cours de réflexion'
+'Format : JJ/MM/AAAA' : 'Format : DD/MM/YYYY'
+Entre 1 et 2000 caractères maximum, au format HTML : Entre 1 et 2000 caractères maximum, au format HTML
+Le parcours : Le parcours
+En cours de réflexion : En cours de réflexion
+Terminé : Terminé 
+Non défini : Non défini
+Entreprise : Entreprise
+Message : Message 
+Date de récepetion : Date de récepetion
+Contenu de la demande : Contenu de la demande
+Repondre au message : Repondre au message
+Message introuvable. : Message introuvable.
+Réponse envoyée avec succès. : Réponse envoyée avec succès.
+Le message : Le message
+Répondre : Répondre
+La présentation : La présentation
+Ajouter un projet : Ajouter un projet 
+Modifier un projet : Modifier un projet
+Liste des projets : Liste des projets
+Projet : Projet
+Sélectionnez un statut pour ce projet : Sélectionnez un statut pour ce projet
+Sélectionnez les langages de programmation associés au projet : Sélectionnez les langages de programmation associés au projet
+Langages : Langages
+Photo du projet : Photo du projet
+Lien : Lien
+Lien vers le site web du projet : Lien vers le site web du projet
+Contenu du projet : Contenu du projet
+Project : Project
+Career : Career
+Le projet : Le projet
+
+# Fin de la traduction FR pour EasyAdminBundle
+
+# Traduction FR pour le Portfolio
+
+Accueil : Accueil
+Mes projets et réalisations : Mes projets et réalisations
+Aucun projet ou réalisation trouvé. : Aucun projet ou réalisation trouvé.
+career.heading.line_1 : Mon
+career.heading.line_2 : Parcours
+career.heading.line_3 : Professionnel
+Mon parcours professionnel : Mon parcours professionnel
+Aucun parcours trouvé. : Aucun parcours trouvé.
+Mes compétences : Mes compétences 
+Aucune compétence trouvée. : Aucune compétence trouvée.
+Me contacter : Me contacter
+Tel : Tel
+Par formulaire : Par formulaire
+Me contacter par formulaire : Me contacter par formulaire
+Projet précédent : Projet précédent
+Projet suivant : Projet suivant
+Parcours précédent : Parcours précédent
+Parcours suivant : Parcours suivant
+Découvrir le projet : Découvrir le projet
+contact.guidance : 'Décrivez votre besoin : tous les champs sont obligatoires et votre message doit contenir au moins 20 caractères.'
+contact.recaptcha_notice : 'Ce site est protégé par reCAPTCHA ; les règles de confidentialité et conditions d’utilisation de Google s’appliquent.'
+Le nom ne peut contenir que des lettres, des espaces, des apostrophes et des tirets. : Le nom ne peut contenir que des lettres, des espaces, des apostrophes et des tirets.
+Le prénom ne peut contenir que des lettres, des espaces, des apostrophes et des tirets. : Le prénom ne peut contenir que des lettres, des espaces, des apostrophes et des tirets.
+Votre message : Votre message
+Envoyer : Envoyer
+Télécharger mon CV : Télécharger mon CV
+Télécharger le CV de : Télécharger le CV de
+Voir tout mon parcours : Voir tout mon parcours
+Voir tout mon parcours professionnel : Voir tout mon parcours professionnel
+Validation du formulaire de contact : Validation du formulaire de contact
+Erreur du formulaire de contact : Erreur du formulaire de contact
+LinkedIn de : LinkedIn de
+GitHub de : GitHub de
+Image du projet : Image du projet
+Fermer la fenêtre : Fermer la fenêtre
+Période : Période
+au : au
+maintenant : maintenant
+Logo de la compétence : Image du projet
+Le nom ne peut pas être vide. : Le nom ne peut pas être vide.
+Le nom ne peut contenir que des lettres et des espaces. : Le nom ne peut contenir que des lettres et des espaces.
+Le nom doit contenir au moins X caractères. : Le nom doit contenir au moins limit caractères.
+Le nom ne peut pas contenir plus de X caractères. : Le nom ne peut pas contenir plus de limit caractères.
+Le prénom ne peut pas être vide. : Le prénom ne peut pas être vide.
+Le prénom doit contenir au moins X caractères. : Le prénom doit contenir au moins limit caractères.
+Le prénom ne peut pas contenir plus de X caractères. : Le prénom ne peut pas contenir plus de limit caractères.
+Le prénom ne peut contenir que des lettres et des espaces. : Le prénom ne peut contenir que des lettres et des espaces.
+L'adresse email ne peut pas être vide. : L'adresse email ne peut pas être vide.
+L'adresse email X n'est pas valide. : L'adresse email value n'est pas valide.
+Le message ne peut pas être vide. : Le message ne peut pas être vide.
+Le message doit contenir au moins X caractères. : Le message doit contenir au moins limit caractères.
+Le message ne peut pas contenir plus de X caractères. : Le message ne peut pas contenir plus de limit caractères.
+Description par défaut : Description par défaut
+Mots-clés par défaut : Mots-clés par défaut 
+Média description par défaut : Média description par défaut
+Retour à la page d'accueil : Retour à la page d'accueil 
+Français : Français
+Anglais : Anglais
+Connexion à l'interface d'administration : Connexion à l'interface d'administration
+Vous êtes déjà connecté avec : Vous êtes déjà connecté avec
+Connexion : Connexion
+
+# Fin de la traduction pour le Portfolio

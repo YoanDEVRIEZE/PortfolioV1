@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="x-apple-disable-message-reformatting">
+        <title>
+            {% block title %}
+                Portfolio
+            {% endblock %}
+        </title>
+        <style>
+            body { margin: 0; padding: 0; background: #f2f4f8; color: #ffffff; font-family: Arial, sans-serif; }
+            table { border-collapse: collapse; border-spacing: 0; }
+            .email-shell { width: 100%; background: #f2f4f8; }
+            .email-card { width: 100%; max-width: 602px; background: #282828; border: 1px solid #d5d8de; }
+            .email-header { padding: 20px 30px; border-bottom: 1px solid #3c3c3c; }
+            .email-brand { color: #ffffff; font-size: 18px; font-weight: 700; text-decoration: none; }
+            .email-content { padding: 36px 30px 42px; color: #ffffff; }
+            .email-content h1 { margin: 0 0 24px; font-size: 28px; line-height: 1.25; }
+            .email-content p { margin: 0 0 16px; font-size: 16px; line-height: 1.55; }
+            .email-content a { color: #8ca1ff; }
+            .email-label { display: block; margin-bottom: 4px; color: #aeb9ef; font-size: 13px; font-weight: 700; text-transform: uppercase; }
+            .email-message { padding: 18px; background: #1e1e1e; border-left: 4px solid #0f33ff; }
+            .email-footer { padding: 24px 30px; background: #0f33ff; color: #ffffff; font-size: 13px; line-height: 1.5; }
+            .email-footer a { color: #ffffff; }
+        </style>
+    </head>
+    <body>
+        {% set portfolioName = owner and (owner.firstname or owner.lastname) ? (owner.firstname ~ ' ' ~ owner.lastname)|trim : 'Portfolio' %}
+        {% set portfolioUrl = site and site.urlSite ? site.urlSite : url('app_site_locale') %}
+        <table role="presentation" class="email-shell" width="100%">
+            <tr>
+                <td align="center" style="padding: 24px 12px;">
+                    <table role="presentation" class="email-card" width="602">
+                        <tr>
+                            <td class="email-header">
+                                <a class="email-brand" href="{{ portfolioUrl }}">
+                                    Portfolio — {{ portfolioName }}
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="email-content">
+                                {% block content %}{% endblock %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="email-footer">
+                                © {{ 'now'|date('Y') }} — Portfolio de {{ portfolioName }} ·
+                                <a href="{{ portfolioUrl }}">
+                                    Voir le site
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

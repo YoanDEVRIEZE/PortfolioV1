@@ -1,0 +1,9 @@
+<div class="contact-field">
+    {{ form_label(field, label|trans, {'label_attr': {'class': 'contact-label'}}) }}
+    {{ form_widget(field) }}
+    {% if field.vars.errors|length > 0 %}
+        <div class="is-invalid" role="alert">
+            {{ form_errors(field) }}
+        </div>
+    {% endif %}
+</div>

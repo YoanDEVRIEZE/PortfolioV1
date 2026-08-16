@@ -1,0 +1,45 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        profil_photo : 
+            uri_prefix: /uploads/profile
+            upload_destination: '%kernel.project_dir%/public/uploads/profile'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false 
+
+        cv:
+            uri_prefix: /uploads/cv
+            upload_destination: '%kernel.project_dir%/public/uploads/cv'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false 
+
+        cover_picture_project:
+            uri_prefix: /uploads/projects/covers
+            upload_destination: '%kernel.project_dir%/public/uploads/projects/covers'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+
+        project_picture_project:
+            uri_prefix: /uploads/projects/details
+            upload_destination: '%kernel.project_dir%/public/uploads/projects/details'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+
+        skill:
+            uri_prefix: /uploads/skills
+            upload_destination: '%kernel.project_dir%/public/uploads/skills'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+
+        cover_picture_career:
+            uri_prefix: /uploads/careers/covers
+            upload_destination: '%kernel.project_dir%/public/uploads/careers/covers'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+
+        job_picture_career:
+            uri_prefix: /uploads/careers/details
+            upload_destination: '%kernel.project_dir%/public/uploads/careers/details'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false

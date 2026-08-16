@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}
+                Portfolio de {{ user.firstname ?? ('Prénom'|trans) }} {{ user.lastname ?? ('Nom'|trans) }} - {{ siteParameter.title ?? ('Titre du site'|trans) }}
+            {% endblock %}
+        </title>
+        {% include '_meta.html.twig' %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('js/app.js') }}" defer></script>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="perspective effect-rotate-left">
+            <div class="container">
+                <div class="outer-nav--return"></div>
+                <div id="viewport" class="l-viewport">
+                    <div class="l-wrapper">
+                        <header class="header d-flex justify-content-between align-items-center">
+                            <a class="header--logo accueil" href="{{ path('app_site', {_locale: app.request.locale}) }}" aria-label="{{ 'Retour à la page d\'accueil'|trans }}" title="{{ 'Retour à la page d\'accueil'|trans }}">
+                                <img class="profil-img" src="{{ user.photofilename ? asset('/uploads/profile/' ~ user.photofilename) : asset('styles/img/profil/default.webp') }}" alt="{{ user.firstname ?? ('Prénom'|trans) }} {{ user.lastname ?? ('Nom'|trans) }}">
+                                <p>
+                                    {{ user.firstname ?? ('Prénom'|trans) }} {{ user.lastname ?? ('Nom'|trans) }}
+                                </p>
+                            </a>
+                            <div class="language-switcher">
+                                {% if app.request.locale == 'en' %}
+                                    <a href="{{ path('app_site', {_locale: 'fr'}) }}" class="lang-link" title="{{ 'Français'|trans }}">
+                                        <img src="{{ asset('styles/img/icones_langages/fr.webp') }}" width="30" alt="{{ 'Français'|trans }}" class="lang-flag">
+                                    </a>
+                                {% else %}
+                                    <a href="{{ path('app_site', {_locale: 'en'}) }}" class="lang-link" title="{{ 'Anglais'|trans }}">
+                                        <img src="{{ asset('styles/img/icones_langages/en.webp') }}" width="30" alt="{{ 'Anglais'|trans }}" class="lang-flag">
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </header>
+                        {% block body %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'email/base.html.twig' %}
+{% block title %}
+    Nouvelle demande de contact
+{% endblock %}
+{% block content %}
+    <h1>
+        Nouvelle demande de contact
+    </h1>
+    <p>
+        <span class="email-label">
+            Nom et prénom
+        </span>
+        {{ lastname }} {{ firstname }}
+    </p>
+    <p>
+        <span class="email-label">
+            Adresse e-mail
+        </span>
+        <a href="mailto:{{ email }}">
+            {{ email }}
+        </a>
+    </p>
+    <p class="email-message">
+        <span class="email-label">
+            Message
+        </span>
+        {{ message|nl2br }}
+    </p>
+{% endblock %}

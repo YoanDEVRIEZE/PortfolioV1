@@ -1,0 +1,183 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+{% block content_title %}
+    Vue d’ensemble
+{% endblock %}
+{% block main %}
+    <div class="admin-stats">
+        <a class="admin-stat admin-stat--accent" href="{{ ea_url().setController('App\\Controller\\Admin\\MessageCrudController').setAction('index') }}">
+            <span>
+                Messages reçus
+            </span>
+            <strong>
+                {{ message_count }}
+            </strong>
+        </a>
+        <a class="admin-stat" href="{{ ea_url().setController('App\\Controller\\Admin\\ProjectCrudController').setAction('index') }}">
+            <span>
+                Projets
+            </span>
+            <strong>
+                {{ project_count }}
+            </strong>
+        </a>
+        <a class="admin-stat" href="{{ ea_url().setController('App\\Controller\\Admin\\CareerCrudController').setAction('index') }}">
+            <span>
+                Expériences
+            </span>
+            <strong>
+                {{ career_count }}
+            </strong>
+        </a>
+        <a class="admin-stat" href="{{ ea_url().setController('App\\Controller\\Admin\\SkillCrudController').setAction('index') }}">
+            <span>
+                Compétences
+            </span>
+            <strong>
+                {{ skill_count }}
+            </strong>
+        </a>
+        <a class="admin-stat" href="{{ ea_url().setController('App\\Controller\\Admin\\AboutCrudController').setAction('index') }}">
+            <span>
+                Présentations
+            </span>
+            <strong>
+                {{ about_count }} / 3
+            </strong>
+        </a>
+    </div>
+    <section class="admin-panel admin-guide">
+        <header class="admin-panel__header">
+            <div>
+                <span class="admin-panel__eyebrow">
+                    Prise en main
+                </span>
+                <h2>
+                    Préparer un portfolio complet
+                </h2>
+                <p>
+                    Suivez ces étapes dans l’ordre. Les actions dépendantes restent indisponibles tant que leurs prérequis ne sont pas remplis.
+                </p>
+            </div>
+        </header>
+        <ol class="admin-checklist">
+            <li class="{{ has_settings ? 'is-complete' : '' }}">
+                <span>
+                    {{ has_settings ? '✓' : '1' }}
+                </span>
+                <div>
+                    <strong>
+                        Configurer le site
+                    </strong>
+                    <small>
+                        Titre, description, mots-clés et URL publique.
+                    </small>
+                </div>
+                <a href="{{ ea_url().setController('App\\Controller\\Admin\\SiteParameterCrudController').setAction('index') }}">
+                    Ouvrir
+                </a>
+            </li>
+            <li class="{{ has_user and has_identity ? 'is-complete' : '' }}">
+                <span>
+                    {{ has_user and has_identity ? '✓' : '2' }}
+                </span>
+                <div>
+                    <strong>
+                        Compléter votre profil
+                    </strong>
+                    <small>
+                        Identité, photo, coordonnées, réseaux et CV.
+                    </small>
+                </div>
+                <a href="{{ ea_url().setController('App\\Controller\\Admin\\UserCrudController').setAction('index') }}">
+                    Ouvrir
+                </a>
+            </li>
+            <li class="{{ skill_count > 0 ? 'is-complete' : '' }}">
+                <span>
+                    {{ skill_count > 0 ? '✓' : '3' }}
+                </span>
+                <div>
+                    <strong>
+                        Créer une compétence
+                    </strong>
+                    <small>
+                        Au moins une compétence est obligatoire avant de pouvoir créer un projet.
+                    </small>
+                </div>
+                <a href="{{ ea_url().setController('App\\Controller\\Admin\\SkillCrudController').setAction('index') }}">
+                    Ouvrir
+                </a>
+            </li>
+            <li class="{{ project_count > 0 ? 'is-complete' : '' }}">
+                <span>
+                    {{ project_count > 0 ? '✓' : '4' }}
+                </span>
+                <div>
+                    <strong>
+                        Présenter un projet
+                    </strong>
+                    <small>
+                        Associez-lui une ou plusieurs compétences existantes.
+                    </small>
+                </div>
+                {% if skill_count > 0 %}
+                    <a href="{{ ea_url().setController('App\\Controller\\Admin\\ProjectCrudController').setAction('index') }}">
+                        Ouvrir
+                    </a>
+                {% else %}
+                    <em>
+                        Compétence requise
+                    </em>
+                {% endif %}
+            </li>
+        </ol>
+    </section>
+    <div class="admin-dashboard-grid">
+        <section class="admin-panel">
+            <h2>
+                Derniers projets
+            </h2>
+            {% if latest_projects is empty %}
+                <p class="admin-empty">
+                    Aucun projet enregistré.
+                </p>
+            {% else %}
+                <div class="admin-list">
+                    {% for project in latest_projects %}
+                        <div>
+                            <span>
+                                {{ project.status }}
+                            </span>
+                            <strong>
+                                {{ project.title }}
+                            </strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </section>
+        <section class="admin-panel">
+            <h2>
+                Derniers parcours
+            </h2>
+            {% if latest_careers is empty %}
+                <p class="admin-empty">
+                    Aucun parcours enregistré.
+                </p>
+            {% else %}
+                <div class="admin-list">
+                    {% for career in latest_careers %}
+                        <div>
+                            <span>
+                                {{ career.startDate|date('Y') }}{% if career.endDate %}–{{ career.endDate|date('Y') }}{% else %}–auj.{% endif %}
+                            </span>
+                            <strong>
+                                {{ career.title }}
+                            </strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

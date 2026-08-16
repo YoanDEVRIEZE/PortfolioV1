@@ -1,0 +1,187 @@
+# English translations for EasyAdminBundle
+
+Bienvenue sur le Tableau de bord : Welcome to the dashboard
+Tableau de bord : Dashboard
+Présentation : Introduction
+Mes projets : Projects
+Parcours : Career paths
+Skills : Skills
+La skill : Skill
+Messages : Messages
+Paramètres du site : Site settings
+Utilisateur : User
+L'utilisateur : The user
+Voir le site : View site
+Déconnexion : Log out
+Vos messages : Your messages
+message(s) : message(s)
+Voir : View
+Vos projets : Your projects
+projet(s) : project(s)
+Aucun projet : No project
+Où est-ce que j’ai travaillé : Where have I worked
+entreprise(s) : Companies
+Aucun parcours : No career path
+En cours : Current
+Vos skills : Your skills
+Liste des présentations : List of introductions
+Titre : Title
+Contenu de votre présentation : Introduction content
+Créer une présentation : Create an introduction
+Modifier une présentation : Edit an introduction
+Entre 1 et 100 caractères maximum. Pour effectuer un retour à ligne, utilisez la balise HTML : Between 1 and 100 characters maximum. To create a line break, use the HTML tag
+Description : Description
+Mots-clés : Keywords
+Description pour les réseaux : Social media description
+URL de votre site : Website URL
+Ajouter les paramètres du site : Add site settings
+Modifier les paramètres du site : Edit site settings
+Détails des paramètres du site : Site settings details
+SiteParameter : SiteParameter
+About : About
+Portfolio : Portfolio
+Titre du site : Site title
+Prénom : First name
+Nom : Last name
+Modifier un utilisateur : Edit user
+user.updated: 'The user "{{ email }}" has been successfully updated.'
+E-mail : E-mail
+Téléphone : Phone
+Photo de profil : Profile picture
+Mot de passe : Password
+Confirmer le mot de passe : Confirm password
+Les mots de passe doivent correspondre : Passwords must match
+Lien GitHub : GitHub link
+Lien Linkedin : LinkedIn link
+Votre CV : Your CV
+Entre X et X caractères maximum : 'Between first and last characters maximum'
+Image au format .webp : Image in .webp format
+Entre 6 et 25 caractères maximum, au moins une majuscule, une minuscule et un chiffre : Between 6 and 25 characters maximum, with at least one uppercase letter, one lowercase letter, and one number
+Veuillez comfirmer votre mot de passe : Please confirm your password
+Fichier au format .pdf, avec une taille maximale de 10Mo : File in .pdf format, with a maximum size of 10MB
+Télécharger le CV : Download the CV
+User : User
+Aucun fichier : No file
+confirmation.added : 'The title content has been successfully added.'
+confirmation.updated : 'The title content has been successfully updated.'
+confirmation.deleted : 'The title content has been successfully deleted.'
+Logo : Logo
+Niveau : Level
+Couleur associée : Associated color
+Ajouter un skill : Add a skill
+Modifier un skill : Edit a skill
+Liste des skills : List of skills
+Skill : Skill
+Entre 0 et 100 : Between 0 and 100
+Selectionnez une couleur correspondante au skill : Select a color for the skill
+Ajouter un parcours : Add a career
+Modifier un parcours : Edit a career
+Liste des parcours : List of career paths
+Nom de l'entreprise : Company name
+Poste occupé : Position held
+Date de début : Start date
+Statut : Status
+Date de fin : End date
+Photo de couverture : Cover photo
+Photo parcours : Career photo
+Contenu du parcours : Career details
+Sélectionnez un statut pour ce parcours : Select a status for this career
+'Format : JJ/MM/AAAA, laissez vide si en cours ou en cours de réflexion' : 'Format: DD/MM/YYYY, leave blank if ongoing or under consideration'
+'Format : JJ/MM/AAAA' : 'Format: DD/MM/YYYY'
+Entre 1 et 2000 caractères maximum, au format HTML : Between 1 and 2000 characters maximum, in HTML format
+Le parcours : Career path
+En cours de réflexion : Under consideration
+Terminé : Completed
+Non défini : Undefined
+Entreprise : Company
+Message : Message
+Date de récepetion : Date received
+Contenu de la demande : Request details
+Repondre au message : Reply to message
+Message introuvable. : Message not found.
+Réponse envoyée avec succès. : Response sent successfully.
+Le message : The message
+Répondre : Reply
+La présentation : The introduction
+Ajouter un projet : Add a project
+Modifier un projet : Edit a project
+Liste des projets : List of projects
+Projet : Project
+Sélectionnez un statut pour ce projet : Select a status for this project
+Sélectionnez les langages de programmation associés au projet : Select the programming languages associated with the project
+Langages : Languages
+Photo du projet : Project photo
+Lien : Link
+Lien vers le site web du projet : Link to the project website
+Contenu du projet : Project details
+Project : Project
+Career : Career
+Le projet : Project
+
+# End of the English translation for EasyAdminBundle
+
+# English translations for the portfolio
+
+Accueil : Home
+Mes projets et réalisations : Projects and work
+Aucun projet ou réalisation trouvé. : No projects or work found.
+career.heading.line_1 : My
+career.heading.line_2 : Professional
+career.heading.line_3 : Background
+Mon parcours professionnel : Professional background
+Aucun parcours trouvé. : No career path found.
+Mes compétences : My skills
+Aucune compétence trouvée. : No skills found.
+Me contacter : Contact me
+Tel : Phone
+Par formulaire : Contact form
+Me contacter par formulaire : Contact me via the form
+Projet précédent : Previous project
+Projet suivant : Next project
+Parcours précédent : Previous career entry
+Parcours suivant : Next career entry
+Découvrir le projet : View project
+contact.guidance : 'Describe your needs: all fields are required and your message must contain at least 20 characters.'
+contact.recaptcha_notice : 'This site is protected by reCAPTCHA; Google’s Privacy Policy and Terms of Service apply.'
+Le nom ne peut contenir que des lettres, des espaces, des apostrophes et des tirets. : The last name can only contain letters, spaces, apostrophes and hyphens.
+Le prénom ne peut contenir que des lettres, des espaces, des apostrophes et des tirets. : The first name can only contain letters, spaces, apostrophes and hyphens.
+Votre message : Your message
+Envoyer : Send
+Télécharger mon CV : Download my CV
+Télécharger le CV de : Download the CV for
+Voir tout mon parcours : View my full career path
+Voir tout mon parcours professionnel : View my full professional background
+Validation du formulaire de contact : Contact form validation
+Erreur du formulaire de contact : Contact form error
+LinkedIn de : LinkedIn profile of
+GitHub de : GitHub profile of
+Image du projet : Project image
+Logo de la compétence : Skill logo
+Fermer la fenêtre : Close window
+Période : Period
+au : to
+maintenant : present
+Le nom ne peut pas être vide. : The name cannot be empty.
+Le nom ne peut contenir que des lettres et des espaces. : The name can only contain letters and spaces.
+Le nom doit contenir au moins X caractères. : The name must contain at least {{ limit }} characters.
+Le nom ne peut pas contenir plus de X caractères. : The name cannot contain more than {{ limit }} characters.
+Le prénom ne peut pas être vide. : The first name cannot be empty.
+Le prénom doit contenir au moins X caractères. : The first name must contain at least {{ limit }} characters.
+Le prénom ne peut pas contenir plus de X caractères. : The first name cannot contain more than {{ limit }} characters.
+Le prénom ne peut contenir que des lettres et des espaces. : The first name can only contain letters and spaces.
+L'adresse email ne peut pas être vide. : The email address cannot be empty.
+L'adresse email X n'est pas valide. : 'The email address "{{ value }}" is not valid.'
+Le message ne peut pas être vide. : The message cannot be empty.
+Le message doit contenir au moins X caractères. : The message must contain at least {{ limit }} characters.
+Le message ne peut pas contenir plus de X caractères. : The message cannot contain more than {{ limit }} characters.
+Description par défaut : Default description
+Mots-clés par défaut : Default keywords
+Média description par défaut : Default media description
+Retour à la page d'accueil : Back to homepage
+Français : French
+Anglais : English
+Connexion à l'interface d'administration : Login to the administration interface
+Vous êtes déjà connecté avec : You are already logged in with
+Connexion : Sign in
+
+# End of the translation for the portfolio

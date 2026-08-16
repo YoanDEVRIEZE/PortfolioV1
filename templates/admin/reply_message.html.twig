@@ -1,0 +1,43 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+{% block content_title %}
+    Répondre à {{ message.firstname }} {{ message.lastname }}
+{% endblock %}
+{% block main %}
+    <section class="admin-panel admin-reply">
+        <dl>
+            <div>
+                <dt>
+                    Destinataire
+                </dt>
+                <dd>
+                    {{ message.email }}
+                </dd>
+            </div>
+            <div>
+                <dt>
+                    Message reçu
+                </dt>
+                <dd>
+                    {{ message.message|nl2br }}
+                </dd>
+            </div>
+        </dl>
+        <form method="post">
+            <label for="reply-message">
+                Votre réponse
+            </label>
+            <textarea id="reply-message" name="replyMessage" rows="9" minlength="10" maxlength="5000" required autofocus>
+                {{ app.request.request.get('replyMessage') }}
+            </textarea>
+            <input type="hidden" name="_token" value="{{ csrf_token('reply_message_' ~ message.id) }}">
+            <div class="admin-reply__actions">
+                <button type="submit" class="btn btn-primary">
+                    Envoyer la réponse
+                </button>
+                <a href="{{ ea_url().setController('App\\Controller\\Admin\\MessageCrudController').setAction('index') }}" class="btn btn-secondary">
+                    Annuler
+                </a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

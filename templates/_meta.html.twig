@@ -1,0 +1,10 @@
+<meta name="description" content="{{ siteParameter.description ?? ('Description par défaut'|trans) }}">
+<meta name="keywords" content="{{ siteParameter.keyword|default([])|join(', ') ?: ('Mots-clés par défaut'|trans) }}">
+<meta name="author" content="{{ user.firstname|default('') }} {{ user.lastname|default('') }}">
+<meta name="robots" content="{{ robots|default('index, follow') }}">
+<meta property="og:title" content="{{ user.firstname|default('Prénom'|trans) }} {{ user.lastname|default('Nom'|trans) }} - Portfolio">
+<meta property="og:description" content="{{ siteParameter.mediadescription ?? ('Média description par défaut'|trans) }}">
+<meta property="og:image" content="{{ user.photofilename ? absolute_url(asset('/uploads/profile/' ~ user.photofilename)) : absolute_url(asset('styles/img/profil/default.webp')) }}">
+<meta property="og:url" content="{{ siteParameter.urlsite ?? absolute_url(path('app_site_locale')) }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ user.photofilename ? asset('/uploads/profile/' ~ user.photofilename) : asset('styles/img/profil/default.webp') }}">

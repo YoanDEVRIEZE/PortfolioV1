@@ -1,0 +1,24 @@
+{% extends 'email/base.html.twig' %}
+{% block title %}
+    Réponse à votre message
+{% endblock %}
+{% block content %}
+    <h1>
+        Réponse à votre demande
+    </h1>
+    <p>
+        Bonjour {{ firstname }},
+    </p>
+    <p>
+        Merci pour votre message envoyé depuis le portfolio.
+    </p>
+    <p class="email-message">
+        {{ replyMessage|nl2br }}
+    </p>
+    <p>
+        Cette réponse concerne votre demande envoyée avec l’adresse :
+        <a href="mailto:{{ email }}">
+            {{ email }}
+        </a>
+    </p>
+{% endblock %}
