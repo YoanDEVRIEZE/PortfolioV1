@@ -1,4 +1,4 @@
-# Portfolio Symfony
+# Portfolio V1
 
 Portfolio bilingue administrable, construit avec Symfony 8.1 et EasyAdmin 5. L’administration centralise les contenus, le profil, les paramètres SEO et les messages reçus.
 
